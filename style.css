@@ -181,6 +181,7 @@ nav a[aria-current="page"] {
 .representatives h2 {
   color: #c60c30;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .representatives h3 {
@@ -190,8 +191,9 @@ nav a[aria-current="page"] {
 
 .rep-list {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* centers the cards on each row */
 }
 
 /* Rep card enhancements */
@@ -328,6 +330,13 @@ footer {
 .social-buttons a.x {
   color: #000000;
 }
+
+.section-divider {
+  width: 80%;
+  margin: 0 auto 40px auto;
+  border-bottom: 2px solid #002868;
+}
+
 
 @keyframes slideInLeft {
   0% {
