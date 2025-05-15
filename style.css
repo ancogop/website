@@ -1,0 +1,266 @@
+/* Basic fixed width container */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.social-buttons a {
+  color: #c60c30;
+  font-size: 20px;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.social-buttons a:last-child {
+  margin-right: 0;
+}
+
+.social-buttons a:hover {
+  color: #a30827;
+}
+
+.donate a {
+  background-color: #002868;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.donate a:hover {
+  background-color: #0045ad;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #c60c30;
+  margin: 10px 0 15px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: #c60c30;
+  text-decoration: underline;
+}
+
+/* Welcome section */
+.welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.welcome-text {
+  max-width: 55%;
+}
+
+.welcome-text h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #c60c30;
+}
+
+.welcome-text p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.btn-about {
+  background-color: #002868;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn-about:hover {
+  background-color: #0045ad;
+}
+
+.courthouse-img {
+  max-width: 40%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+/* Meeting info */
+.meeting-info {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.meeting-info h2 {
+  color: #c60c30;
+  margin-top: 0;
+}
+
+/* Representatives section */
+.representatives {
+  margin-bottom: 40px;
+}
+
+.representatives h2 {
+  color: #c60c30;
+  margin-bottom: 20px;
+}
+
+.representatives h3 {
+  margin-top: 25px;
+  color: #002868;
+}
+
+.rep-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.rep-card {
+  display: flex;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  padding: 10px;
+  width: 300px;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.rep-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.rep-info p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* Local leaders table */
+.local-leaders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.local-leaders-table th,
+.local-leaders-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.local-leaders-table th {
+  background-color: #c60c30;
+  color: white;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  background-color: #f8f8f8;
+}
+
+.footer-elephant {
+  width: 40px;
+}
+
+.page-title {
+  color: #c60c30;
+  font-size: 24px;
+  margin: 25px 0 15px;
+}
+
+.documents-list {
+  list-style: none;
+  padding: 0;
+  max-width: 960px;
+}
+
+.documents-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.documents-list li a {
+  background-color: #002868;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.documents-list li a:hover {
+  background-color: #0045ad;
+}
+
+.social-buttons a {
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.social-buttons a.facebook {
+  color: #002868;
+}
+
+.social-buttons a.x {
+  color: #000000;
+}
