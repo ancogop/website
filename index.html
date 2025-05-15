@@ -3,10 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   <title>Anderson County Republican Party</title>
+  
+  <!-- Basic SEO -->
+  <meta name="description" content="Anderson County Republican Party promoting conservative values, community engagement, and strong leadership in Anderson County, Kansas." />
+  <meta name="keywords" content="Anderson County, Republican Party, Kansas, Conservative, Local Elections, Community Engagement" />
+  <meta name="author" content="Anderson County Republican Party" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images\elephant.png" />
+  <!-- Or you can use an ICO file -->
+  <!-- <link rel="icon" href="favicon.ico" /> -->
+  
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- Your CSS -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Optional: Open Graph tags for social media sharing -->
+  <meta property="og:title" content="Anderson County Republican Party" />
+  <meta property="og:description" content="Promoting conservative values and community engagement in Anderson County, Kansas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ancogop.org" />
+  <meta property="og:image" content="https://ancogop.org/images/elephant.png" />
+  
+  <!-- Optional: Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anderson County Republican Party" />
+  <meta name="twitter:description" content="Promoting conservative values and community engagement in Anderson County, Kansas." />
+  <meta name="twitter:image" content="https://ancogop.org/images/elephant.png" />
 </head>
+  
 <body>
   <header>
     <div class="top-bar">
@@ -24,87 +53,154 @@
       </div>
     </div>
     <nav>
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="documents.html">Meeting Documents</a>
-      <a href="local-leaders.html">Local Leaders</a>
+      <a href="index" aria-current="page">Home</a>
+      <a href="about">About Us</a>
+      <a href="minutes">Meeting Minutes</a>
+      <a href="local-reps">Local Representatives</a>
     </nav>
   </header>
 
   <main>
     <section class="welcome-section">
       <div class="welcome-text">
-        <h2>Welcome to the Anderson County Republican Party</h2>
-        <p>Committed to conservative values, community engagement, and strong leadership.</p>
-        <a href="about.html" class="btn-about">About Us</a>
+        <h2>Community, Conservatism, Leadership</h2>
+        <p>
+          <strong>The Anderson County Republican Party</strong> is rooted in the heart of Kansas and driven by conservative values, civic participation, and strong leadership. Our mission is to empower local citizens, support principled candidates, and advance policies that protect our freedoms and strengthen our community.
+        </p>
+        <a href="about.html" class="btn-about">Learn More</a>
       </div>
       <img src="images/courthouse.jpg" alt="County Courthouse" class="courthouse-img" loading="eager" />
-    </section>
+    </section>    
 
-    <section class="meeting-info">
-      <h2>Meeting Dates & Location</h2>
-      <p>Monthly meeting: First Tuesday of every month at 7 PM</p>
-      <p>Location: County Community Center, 123 Main St, Countyville</p>
+    <section class="meeting-section">
+      <div class="meeting-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.899012996544!2d-95.24263618470063!3d38.28405487965704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c79022940d3f01%3A0x8c47d0f854157974!2s405%20N%20Maple%20St%2C%20Garnett%2C%20KS%2066032!5e0!3m2!1sen!2sus!4v1715700000000!5m2!1sen!2sus"
+          width="100%" height="250" style="border:1px solid #ccc; border-radius: 4px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="meeting-text">
+        <div class="meeting-card">
+          <h2>Meeting Dates & Location</h2>
+          <p>We meet at <strong>Pizza Hut</strong> in Garnett every <strong>4th Thursday of the month</strong> unless otherwise specified.</p>
+          <p>Time: 6:00 PM</p>
+          <p>Address: 405 N Maple St, Garnett, KS 66032</p>
+        </div>
+      </div>
     </section>
 
     <section class="representatives">
       <h2>Meet Your Representatives</h2>
-
-      <h3>National Leaders</h3>
+    
+      <h3>National Representatives</h3>
       <div class="rep-list">
         <div class="rep-card">
-          <img src="images/national1.jpg" alt="John Doe" />
+          <img src="images/moran.jpg" alt="Jerry Moran" />
           <div class="rep-info">
-            <p><strong>John Doe</strong></p>
-            <p>Email: john.doe@example.com</p>
-            <p>Phone: (555) 123-4567</p>
+            <p class="rep-title">U.S. Senator</p>
+            <p><strong>Jerry Moran</strong></p>
+            <p class="rep-party">Republican</p>
+            <p>
+              <a href="https://www.moran.senate.gov/public/index.cfm/e-mail-jerry">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </p>
+            <p>
+              <a href="tel:9133930711">
+                <i class="fas fa-phone"></i> (913) 393-0711
+              </a>
+            </p>
           </div>
         </div>
+    
         <div class="rep-card">
-          <img src="images/national2.jpg" alt="Jane Smith" />
+          <img src="images/marshall.jpg" alt="Roger Marshall" />
           <div class="rep-info">
-            <p><strong>Jane Smith</strong></p>
-            <p>Email: jane.smith@example.com</p>
-            <p>Phone: (555) 234-5678</p>
+            <p class="rep-title">U.S. Senator</p>
+            <p><strong>Roger Marshall</strong></p>
+            <p class="rep-party">Republican</p>
+            <p>
+              <a href="https://www.marshall.senate.gov/contact/contact-form/">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </p>
+            <p>
+              <a href="tel:9138797070">
+                <i class="fas fa-phone"></i> (913) 879-7070
+              </a>
+            </p>
           </div>
         </div>
+    
         <div class="rep-card">
-          <img src="images/sharice.jpg" alt="Sharice Davids" />
+          <img src="images/davids.jpg" alt="Sharice Davids" />
           <div class="rep-info">
+            <p class="rep-title">U.S. Representative</p>
             <p><strong>Sharice Davids</strong></p>
-            <a href="https://davids.house.gov/address_authentication?form=/contact/email-me">Email</a>
-            <p>Phone: (202) 225-2865</p>
+            <p class="rep-party">Democrat</p>
+            <p>
+              <a href="https://davids.house.gov/address_authentication?form=/contact/email-me">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </p>
+            <p>
+              <a href="tel:2022252865">
+                <i class="fas fa-phone"></i> (202) 225-2865
+              </a>
+            </p>
           </div>
         </div>
       </div>
-
-      <h3>State Leaders</h3>
+    
+      <h3>State Representatives</h3>
       <div class="rep-list">
         <div class="rep-card">
-          <img src="images/state1.jpg" alt="Alice Brown" />
+          <img src="images/tyson.jpg" alt="Caryn Tyson" />
           <div class="rep-info">
-            <p><strong>Alice Brown</strong></p>
-            <p>Email: alice.brown@example.com</p>
-            <p>Phone: (555) 456-7890</p>
+            <p class="rep-title">State Senator</p>
+            <p><strong>Caryn Tyson</strong></p>
+            <p class="rep-party">Republican</p>
+            <p>
+              <a href="mailto:Caryn.Tyson@senate.ks.gov">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </p>
+            <p>
+              <a href="tel:7852966838">
+                <i class="fas fa-phone"></i> (785) 296-6838
+              </a>
+            </p>
           </div>
         </div>
+    
         <div class="rep-card">
-          <img src="images/state2.jpg" alt="Bob White" />
+          <img src="images/gardner.jpg" alt="Fred Gardner" />
           <div class="rep-info">
-            <p><strong>Bob White</strong></p>
-            <p>Email: bob.white@example.com</p>
-            <p>Phone: (555) 567-8901</p>
+            <p class="rep-title">State Representative</p>
+            <p><strong>Fred Gardner</strong></p>
+            <p class="rep-party">Republican</p>
+            <p>
+              <a href="mailto:Fred.Gardner@house.ks.gov">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </p>
+            <p>
+              <a href="tel:7852967451">
+                <i class="fas fa-phone"></i> (785) 296-7451
+              </a>
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </section>    
   </main>
 
   <footer>
     <img src="images/elephant.png" alt="Republican Elephant" class="footer-elephant" />
     <p>© 2025 Anderson County Republican Party. All rights reserved.</p>
     <div class="donate">
-      <a href="mailto:contact@andersoncountygop.org">Contact Us</a>
+      <a href="mailto:contact@ancogop.org">Contact Us</a>
     </div>
   </footer>
 </body>

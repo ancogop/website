@@ -89,18 +89,30 @@ nav a[aria-current="page"] {
 
 .welcome-text {
   max-width: 55%;
+  padding: 20px;
 }
 
 .welcome-text h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 700;
   color: #c60c30;
+  margin-bottom: 1px;
+  letter-spacing: 0.03em;
+  max-width: 600px;
+  display: inline-block;
+  
+  /* Animation */
+  opacity: 0;
+  animation: slideInLeft 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .welcome-text p {
-  font-size: 16px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
+
 
 .btn-about {
   background-color: #002868;
@@ -123,17 +135,43 @@ nav a[aria-current="page"] {
 }
 
 /* Meeting info */
-.meeting-info {
-  background-color: #fafafa;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-bottom: 25px;
+.meeting-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+  gap: 20px;
 }
 
-.meeting-info h2 {
+.meeting-map {
+  flex: 1;
+  max-width: 45%;
+}
+
+.meeting-text {
+  flex: 1;
+  max-width: 55%;
+}
+
+.meeting-text h2 {
   color: #c60c30;
   margin-top: 0;
+  font-size: 22px;
 }
+
+.meeting-text p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.meeting-card {
+  background-color: #fafafa;
+  padding: 20px 25px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
 
 /* Representatives section */
 .representatives {
@@ -156,13 +194,14 @@ nav a[aria-current="page"] {
   flex-wrap: wrap;
 }
 
+/* Rep card enhancements */
 .rep-card {
   display: flex;
   border: 1px solid #ccc;
   background: #fafafa;
-  padding: 10px;
+  padding: 12px;
   width: 300px;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 4px;
 }
 
@@ -170,14 +209,38 @@ nav a[aria-current="page"] {
   width: 80px;
   height: 80px;
   object-fit: cover;
+  object-position: top; /* Show top of head */
   margin-right: 15px;
   border-radius: 5px;
   border: 1px solid #aaa;
 }
 
+/* Rep info formatting */
 .rep-info p {
-  margin: 3px 0;
+  margin: 5px 0;
   font-size: 14px;
+}
+
+.rep-info a {
+  color: #002868;
+  text-decoration: none;
+}
+
+.rep-info a:hover {
+  text-decoration: underline;
+}
+
+/* Icon spacing */
+.rep-info i.fas {
+  margin-right: 6px;
+}
+
+/* Title styling */
+.rep-title {
+  color: #c60c30; /* Red used in headings */
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
 }
 
 /* Local leaders table */
@@ -195,7 +258,7 @@ nav a[aria-current="page"] {
 }
 
 .local-leaders-table th {
-  background-color: #c60c30;
+  background-color: #002868;
   color: white;
 }
 
@@ -224,7 +287,7 @@ footer {
 .documents-list {
   list-style: none;
   padding: 0;
-  max-width: 960px;
+  max-width: 100%;
 }
 
 .documents-list li {
@@ -242,6 +305,7 @@ footer {
   background-color: #002868;
   color: white;
   padding: 6px 12px;
+  font-weight: bold;
   text-decoration: none;
   border-radius: 3px;
 }
@@ -264,3 +328,101 @@ footer {
 .social-buttons a.x {
   color: #000000;
 }
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 600px) {
+  /* Adjust header layout */
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .top-bar h1 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .social-buttons {
+    margin-bottom: 10px;
+  }
+
+  .donate {
+    margin-top: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Make footer responsive */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-elephant {
+    margin-bottom: 10px;
+  }
+
+  /* Add padding to body on mobile */
+  body {
+    padding: 15px;
+  }
+
+  .welcome-text {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .welcome-text h2 {
+    font-size: 22px;
+  }
+
+  .welcome-text p {
+    font-size: 16px;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+  }
+
+  .courthouse-img {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+
+  .meeting-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .meeting-map,
+  .meeting-text {
+    max-width: 100%;
+  }
+
+  .meeting-map iframe {
+    height: 200px;
+  }
+}
+
