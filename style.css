@@ -217,12 +217,12 @@ nav a[aria-current="page"] {
 }
 
 .rep-card img {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
   object-position: top;
   margin-right: 15px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px solid #aaa;
 }
 
