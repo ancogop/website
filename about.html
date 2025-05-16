@@ -76,32 +76,51 @@
       </p>
     </section>
     <h2 class="page-title">Our Officers</h2>
-    <table class="local-leaders-table" aria-label="Local Leaders Contact Information">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Position</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Wesley Keller</td>
-          <td>Chairman</td>
-          <td><a href="mailto:wesley.keller@ancogop.org">wesley.keller@ancogop.org</a></td>
-        </tr>
-        <tr>
-          <td>Cathy Hoke</td>
-          <td>Vice Chair</td>
-          <td><a href="mailto:cathy.hoke@ancogop.org">cathy.hoke@ancogop.org</a></td>
-        </tr>
-        <tr>
-          <td>Jeremy DuPont</td>
-          <td>Secretary / Treasurer</td>
-          <td><a href="mailto:jeremy.dupont@ancogop.org">jeremy.dupont@ancogop.org</a></td>
-        </tr>
-      </tbody>
-    </table>    
+    <div class="table-responsive">
+      <table class="local-leaders-table" id="leadersTable" aria-label="Local Leaders Contact Information">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Name</th>
+            <th onclick="sortTable(1)">Position</th>
+            <th onclick="sortTable(2)">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wesley Keller</td>
+            <td>Chairman</td>
+            <td><a href="mailto:wesley.keller@ancogop.org">wesley.keller@ancogop.org</a></td>
+          </tr>
+          <tr>
+            <td>Cathy Hoke</td>
+            <td>Vice Chair</td>
+            <td><a href="mailto:cathy.hoke@ancogop.org">cathy.hoke@ancogop.org</a></td>
+          </tr>
+          <tr>
+            <td>Jeremy DuPont</td>
+            <td>Secretary / Treasurer</td>
+            <td><a href="mailto:jeremy.dupont@ancogop.org">jeremy.dupont@ancogop.org</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <script>
+      // Sort function
+      function sortTable(colIndex) {
+        const table = document.getElementById("leadersTable");
+        const rows = Array.from(table.rows).slice(1); // Exclude thead
+        const ascending = table.getAttribute("data-sort-dir") !== "asc";
+        rows.sort((a, b) => {
+          const A = a.cells[colIndex].innerText.toLowerCase();
+          const B = b.cells[colIndex].innerText.toLowerCase();
+          return ascending ? A.localeCompare(B) : B.localeCompare(A);
+        });
+        table.setAttribute("data-sort-dir", ascending ? "asc" : "desc");
+        const tbody = table.tBodies[0];
+        rows.forEach(row => tbody.appendChild(row));
+      }
+    </script>
   </main>
 
   <footer>

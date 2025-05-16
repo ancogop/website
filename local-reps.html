@@ -60,7 +60,207 @@
   </header>
 
   <main>
-    <h2 class="page-title">Coming Soon</h2>
+    <div class="header-with-search">
+      <h2 class="page-title">Local Representatives</h2>
+      <div class="table-controls">
+        <input type="text" id="searchBox" class="header-search" placeholder="Search..." />
+      </div>      
+    </div>
+    
+    <div class="table-responsive">
+      <table class="local-leaders-table" id="leadersTable" aria-label="Local Leaders Contact Information">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Keep all rows here -->
+          <tr>
+            <td>Wes Mcclain</td>
+            <td>Sheriff</td>
+          </tr>
+          <tr>
+            <td>Les McGhee</td>
+            <td>County Commissioner - District 1</td>
+          </tr>
+          <tr>
+            <td>Anthony "Spike" Mersman</td>
+            <td>County Commissioner - District 2</td>
+          </tr>
+          <tr>
+            <td>Michael Blaufuss</td>
+            <td>County Commissioner - District 3</td>
+          </tr>
+          <tr>
+            <td>Julie Wettstein</td>
+            <td>County Clerk</td>
+          </tr>
+          <tr>
+            <td>Steven R. Wilson</td>
+            <td>County Attorney</td>
+          </tr>
+          <tr>
+            <td>Adam Wilson</td>
+            <td>County Appraiser</td>
+          </tr>
+          <tr>
+            <td>Sandra J Baugher</td>
+            <td>Register of Deeds</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+      <div id="resultCount" class="result-count"></div>
+    </div>
+    
+    <div class="pagination-wrapper">
+      <div id="pagination" class="pagination-controls"></div>
+      <div class="rows-wrapper">
+        <select id="rowsPerPage" class="rows-per-page">
+          <option value="5">5 per page</option>
+          <option value="10" selected>10 per page</option>
+          <option value="25">25 per page</option>
+          <option value="50">50 per page</option>
+        </select>
+      </div>
+    </div>    
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const table = document.getElementById("leadersTable");
+        const tbody = table.querySelector("tbody");
+        const searchInput = document.getElementById("searchBox");
+        const rowsPerPageSelect = document.getElementById("rowsPerPage");
+        const paginationContainer = document.getElementById("pagination");
+    
+        let currentPage = 1;
+        let rowsPerPage = parseInt(rowsPerPageSelect.value);
+        let sortColumnIndex = null;
+        let sortAscending = true;
+    
+        // Save the original rows permanently
+        const allRows = Array.from(tbody.querySelectorAll("tr"));
+    
+        function getFilteredRows() {
+          const filter = searchInput.value.toLowerCase();
+          return allRows.filter(row =>
+            row.innerText.toLowerCase().includes(filter)
+          );
+        }
+    
+        function renderTablePage() {
+          let rows = getFilteredRows();
+    
+          // Sort if applicable
+          if (sortColumnIndex !== null) {
+            rows.sort((a, b) => {
+              const A = a.cells[sortColumnIndex].textContent.toLowerCase();
+              const B = b.cells[sortColumnIndex].textContent.toLowerCase();
+              return sortAscending ? A.localeCompare(B) : B.localeCompare(A);
+            });
+          }
+    
+          const totalPages = Math.ceil(rows.length / rowsPerPage);
+          const start = (currentPage - 1) * rowsPerPage;
+          const end = start + rowsPerPage;
+          const visibleRows = rows.slice(start, end);
+    
+          // Clear tbody and append only visible rows
+          tbody.innerHTML = "";
+          visibleRows.forEach(row => tbody.appendChild(row));
+    
+          renderPagination(totalPages);
+
+          // Update result count
+          const resultCount = document.getElementById("resultCount");
+          resultCount.textContent = `Showing ${Math.min(end, rows.length)} of ${rows.length} results`;
+        }
+    
+        function renderPagination(totalPages) {
+          paginationContainer.innerHTML = "";
+
+          const maxButtons = window.innerWidth <= 500 ? 5 : 10; // Responsive: fewer on mobile
+          const half = Math.floor(maxButtons / 2);
+          let start = Math.max(1, currentPage - half);
+          let end = Math.min(totalPages, start + maxButtons - 1);
+
+          if (end - start < maxButtons - 1) {
+            start = Math.max(1, end - maxButtons + 1);
+          }
+        
+          // Previous Button
+          if (currentPage > 1) {
+            const prevBtn = document.createElement("button");
+            prevBtn.textContent = "« Prev";
+            prevBtn.addEventListener("click", () => {
+              currentPage--;
+              renderTablePage();
+            });
+            paginationContainer.appendChild(prevBtn);
+          }
+        
+          // Page Buttons
+          for (let i = start; i <= end; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = i;
+            btn.classList.toggle("active", i === currentPage);
+            btn.addEventListener("click", () => {
+              currentPage = i;
+              renderTablePage();
+            });
+            paginationContainer.appendChild(btn);
+          }
+        
+          // Next Button
+          if (currentPage < totalPages) {
+            const nextBtn = document.createElement("button");
+            nextBtn.textContent = "Next »";
+            nextBtn.addEventListener("click", () => {
+              currentPage++;
+              renderTablePage();
+            });
+            paginationContainer.appendChild(nextBtn);
+          }
+        }
+
+        function sortTable(index) {
+          if (sortColumnIndex === index) {
+            sortAscending = !sortAscending;
+          } else {
+            sortColumnIndex = index;
+            sortAscending = true;
+          }
+          currentPage = 1;
+          renderTablePage();
+        }
+    
+        // Hook up header clicks to sorting
+        const headers = table.querySelectorAll("th");
+        headers.forEach((th, index) => {
+          th.style.cursor = "pointer";
+          th.addEventListener("click", () => sortTable(index));
+        });
+    
+        // Input events
+        searchInput.addEventListener("input", () => {
+          currentPage = 1;
+          renderTablePage();
+        });
+    
+        rowsPerPageSelect.addEventListener("change", () => {
+          rowsPerPage = parseInt(rowsPerPageSelect.value);
+          currentPage = 1;
+          renderTablePage();
+        });
+    
+        // Default: sort by Name (column 0)
+        sortColumnIndex = 0;
+        sortAscending = true;
+        renderTablePage();
+      });
+    </script>       
   </main>
 
   <footer>

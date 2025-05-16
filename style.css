@@ -2,11 +2,9 @@
 body {
   font-family: Arial, sans-serif;
   background-color: white;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
   color: #333;
 }
 
@@ -23,10 +21,10 @@ header {
 }
 
 .social-buttons a {
-  color: #c60c30;
-  font-size: 20px;
-  margin-right: 15px;
   text-decoration: none;
+  font-size: 20px;
+  margin-right: 10px;
+  display: inline-block;
 }
 
 .social-buttons a:last-child {
@@ -37,16 +35,29 @@ header {
   color: #a30827;
 }
 
-.donate a {
+.social-buttons a.facebook {
+  color: #002868;
+}
+
+.social-buttons a.x {
+  color: #000000;
+}
+
+.donate a,
+.btn-about,
+.documents-list li a {
   background-color: #002868;
   color: white;
   padding: 8px 15px;
   text-decoration: none;
   border-radius: 3px;
   font-weight: bold;
+  display: inline-block;
 }
 
-.donate a:hover {
+.donate a:hover,
+.btn-about:hover,
+.documents-list li a:hover {
   background-color: #0045ad;
 }
 
@@ -100,8 +111,6 @@ nav a[aria-current="page"] {
   letter-spacing: 0.03em;
   max-width: 600px;
   display: inline-block;
-  
-  /* Animation */
   opacity: 0;
   animation: slideInLeft 0.8s ease forwards;
   animation-delay: 0.3s;
@@ -111,21 +120,6 @@ nav a[aria-current="page"] {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
-}
-
-
-.btn-about {
-  background-color: #002868;
-  color: white;
-  padding: 8px 15px;
-  text-decoration: none;
-  border-radius: 3px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.btn-about:hover {
-  background-color: #0045ad;
 }
 
 .courthouse-img {
@@ -143,13 +137,16 @@ nav a[aria-current="page"] {
   gap: 20px;
 }
 
-.meeting-map {
+.meeting-map,
+.meeting-text {
   flex: 1;
+}
+
+.meeting-map {
   max-width: 45%;
 }
 
 .meeting-text {
-  flex: 1;
   max-width: 55%;
 }
 
@@ -172,7 +169,6 @@ nav a[aria-current="page"] {
   border: 1px solid #ddd;
 }
 
-
 /* Representatives section */
 .representatives {
   margin-bottom: 40px;
@@ -193,10 +189,10 @@ nav a[aria-current="page"] {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center; /* centers the cards on each row */
+  justify-content: center;
 }
 
-/* Rep card enhancements */
+/* Rep card */
 .rep-card {
   display: flex;
   border: 1px solid #ccc;
@@ -211,13 +207,12 @@ nav a[aria-current="page"] {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  object-position: top; /* Show top of head */
+  object-position: top;
   margin-right: 15px;
   border-radius: 5px;
   border: 1px solid #aaa;
 }
 
-/* Rep info formatting */
 .rep-info p {
   margin: 5px 0;
   font-size: 14px;
@@ -232,14 +227,12 @@ nav a[aria-current="page"] {
   text-decoration: underline;
 }
 
-/* Icon spacing */
 .rep-info i.fas {
   margin-right: 6px;
 }
 
-/* Title styling */
 .rep-title {
-  color: #c60c30; /* Red used in headings */
+  color: #c60c30;
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 2px;
@@ -262,6 +255,115 @@ nav a[aria-current="page"] {
 .local-leaders-table th {
   background-color: #002868;
   color: white;
+  cursor: pointer;
+}
+
+.table-responsive {
+  overflow-x: auto; /* allow horizontal scroll only if needed */
+}
+
+.table-responsive table {
+  width: 100%;
+  min-width: 600px; /* Forces horizontal scroll on small screens */
+}
+
+.table-search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 20px 0;
+  flex-wrap: wrap; /* Optional: helps with responsiveness */
+}
+
+.table-search label {
+  font-weight: bold;
+  color: #002868;
+  white-space: nowrap;
+}
+
+.table-search input[type="text"] {
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.header-with-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.header-search {
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.table-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.pagination-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.pagination-controls button {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination-controls button.active {
+  background-color: #002868;
+  color: white;
+  font-weight: bold;
+}
+
+.rows-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.rows-per-page {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.result-count {
+  font-size: 14px;
+  color: #333;
+  margin-top: 8px;
+  text-align: left;
 }
 
 /* Footer */
@@ -303,41 +405,13 @@ footer {
   border-radius: 4px;
 }
 
-.documents-list li a {
-  background-color: #002868;
-  color: white;
-  padding: 6px 12px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 3px;
-}
-
-.documents-list li a:hover {
-  background-color: #0045ad;
-}
-
-.social-buttons a {
-  text-decoration: none;
-  font-size: 20px;
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.social-buttons a.facebook {
-  color: #002868;
-}
-
-.social-buttons a.x {
-  color: #000000;
-}
-
 .section-divider {
   width: 80%;
   margin: 0 auto 40px auto;
   border-bottom: 2px solid #002868;
 }
 
-
+/* Animations */
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -349,8 +423,8 @@ footer {
   }
 }
 
+/* Responsive */
 @media (max-width: 600px) {
-  /* Adjust header layout */
   .top-bar {
     flex-direction: column;
     align-items: center;
@@ -382,7 +456,6 @@ footer {
     text-align: center;
   }
 
-  /* Make footer responsive */
   footer {
     flex-direction: column;
     text-align: center;
@@ -393,7 +466,6 @@ footer {
     margin-bottom: 10px;
   }
 
-  /* Add padding to body on mobile */
   body {
     padding: 15px;
   }
@@ -434,4 +506,3 @@ footer {
     height: 200px;
   }
 }
-
