@@ -366,10 +366,32 @@ nav a[aria-current="page"] {
   text-align: left;
 }
 
-/* Footer */
+/* Footer top link section */
+.footer-links {
+  display: flex;
+  justify-content: center; /* Center the group */
+  gap: 40px; /* Add spacing between links */
+  background-color: #eaeaea;
+  padding: 8px 0;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Main footer */
 footer {
   border-top: 1px solid #ccc;
-  margin-top: 30px;
+  margin-top: 0; /* removed spacing since new section is above */
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -409,6 +431,11 @@ footer {
   width: 80%;
   margin: 0 auto 40px auto;
   border-bottom: 2px solid #002868;
+}
+
+.header-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Animations */
