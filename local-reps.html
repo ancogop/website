@@ -202,6 +202,40 @@
           currentPage = 1;
           renderTablePage();
         }
+
+        async function populateLeadersTableFromCSV(csvPath) {
+          try {
+            const response = await fetch(csvPath);
+            if (!response.ok) throw new Error("CSV file not found");
+          
+            const csvText = await response.text();
+            const rows = csvText.trim().split("\n");
+          
+            const tableBody = document.querySelector("#leadersTable tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+          
+            allRows = []; // Reset the global array
+          
+            for (const row of rows) {
+              const [name, position] = row.split(",");
+            
+              const tr = document.createElement("tr");
+            
+              const tdName = document.createElement("td");
+              tdName.textContent = name.trim();
+            
+              const tdPosition = document.createElement("td");
+              tdPosition.textContent = position.trim();
+            
+              tr.appendChild(tdName);
+              tr.appendChild(tdPosition);
+            
+              allRows.push(tr); // Store for pagination
+            }
+          } catch (error) {
+            console.error("Failed to load CSV data:", error);
+          }
+        }
     
         // Hook up header clicks to sorting
         const headers = table.querySelectorAll("th");
@@ -221,53 +255,13 @@
           currentPage = 1;
           renderTablePage();
         });
+
+        populateLeadersTableFromCSV("reps.csv");
     
         // Default: sort by Name (column 0)
         sortColumnIndex = 0;
         sortAscending = true;
         renderTablePage();
-      });
-
-      async function populateLeadersTableFromCSV(csvPath) {
-        try {
-          const response = await fetch(csvPath);
-          if (!response.ok) throw new Error("CSV file not found");
-        
-          const csvText = await response.text();
-          const rows = csvText.trim().split("\n");
-        
-          const tableBody = document.querySelector("#leadersTable tbody");
-          tableBody.innerHTML = ""; // Clear existing rows
-        
-          allRows = []; // Reset the global array
-        
-          for (const row of rows) {
-            const [name, position] = row.split(",");
-          
-            const tr = document.createElement("tr");
-          
-            const tdName = document.createElement("td");
-            tdName.textContent = name.trim();
-          
-            const tdPosition = document.createElement("td");
-            tdPosition.textContent = position.trim();
-          
-            tr.appendChild(tdName);
-            tr.appendChild(tdPosition);
-          
-            allRows.push(tr); // Store for pagination
-          }
-        
-          currentPage = 1; // Reset pagination
-          renderTablePage(); // Now that allRows is populated
-        } catch (error) {
-          console.error("Failed to load CSV data:", error);
-        }
-      }
-
-      // Load CSV on page load
-      document.addEventListener("DOMContentLoaded", () => {
-        populateLeadersTableFromCSV("reps.csv");
       });
     </script>       
   </main>
