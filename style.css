@@ -635,6 +635,11 @@ footer {
   background-color: #0045ad;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
+
 /* Animations */
 @keyframes slideInLeft {
   0% {
