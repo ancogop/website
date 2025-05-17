@@ -98,6 +98,10 @@ nav a[aria-current="page"] {
   margin: 25px 0;
 }
 
+.welcome-section * {
+  box-sizing: content-box;
+}
+
 .welcome-text {
   max-width: 55%;
   padding: 20px;
