@@ -108,7 +108,7 @@
         let sortAscending = true;
     
         // Save the original rows permanently
-        const allRows = Array.from(tbody.querySelectorAll("tr"));
+        let allRows = [];
     
         function getFilteredRows() {
           const filter = searchInput.value.toLowerCase();
@@ -237,7 +237,9 @@
           const rows = csvText.trim().split("\n");
         
           const tableBody = document.querySelector("#leadersTable tbody");
-          tableBody.innerHTML = ""; // Clear existing hardcoded rows
+          tableBody.innerHTML = ""; // Clear existing rows
+        
+          allRows = []; // Reset the global array
         
           for (const row of rows) {
             const [name, position] = row.split(",");
@@ -252,13 +254,17 @@
           
             tr.appendChild(tdName);
             tr.appendChild(tdPosition);
-            tableBody.appendChild(tr);
+          
+            allRows.push(tr); // Store for pagination
           }
+        
+          currentPage = 1; // Reset pagination
+          renderTablePage(); // Now that allRows is populated
         } catch (error) {
           console.error("Failed to load CSV data:", error);
         }
       }
-    
+
       // Load CSV on page load
       document.addEventListener("DOMContentLoaded", () => {
         populateLeadersTableFromCSV("reps.csv");
