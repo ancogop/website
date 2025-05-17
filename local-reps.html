@@ -256,12 +256,12 @@
           renderTablePage();
         });
 
-        populateLeadersTableFromCSV("reps.csv");
-    
-        // Default: sort by Name (column 0)
-        sortColumnIndex = 0;
-        sortAscending = true;
-        renderTablePage();
+        // Load CSV and then initialize
+        populateLeadersTableFromCSV("reps.csv").then(() => {
+          sortColumnIndex = 0;
+          sortAscending = true;
+          renderTablePage();
+        });
       });
     </script>       
   </main>
