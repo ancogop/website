@@ -77,92 +77,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Keep all rows here -->
-          <tr>
-            <td>Wes Mcclain</td>
-            <td>Sheriff</td>
-          </tr>
-          <tr>
-            <td>Les McGhee</td>
-            <td>County Commissioner - District 1</td>
-          </tr>
-          <tr>
-            <td>Anthony "Spike" Mersman</td>
-            <td>County Commissioner - District 2</td>
-          </tr>
-          <tr>
-            <td>Michael Blaufuss</td>
-            <td>County Commissioner - District 3</td>
-          </tr>
-          <tr>
-            <td>Julie Wettstein</td>
-            <td>County Clerk</td>
-          </tr>
-          <tr>
-            <td>Steven R. Wilson</td>
-            <td>County Attorney</td>
-          </tr>
-          <tr>
-            <td>Sandra J Baugher</td>
-            <td>Register of Deeds</td>
-          </tr>
-          <tr>
-            <td>Roger Shilling</td>
-            <td>USD 365 #1</td>
-          </tr>
-          <tr>
-            <td>Matt Self</td>
-            <td>USD 365 #2</td>
-          </tr>
-          <tr>
-            <td>Brian Schafer</td>
-            <td>USD 365</td>
-          </tr>
-          <tr>
-            <td>Michael Richards</td>
-            <td>USD 365</td>
-          </tr>
-          <tr>
-            <td>Sonya Martin</td>
-            <td>USD 365</td>
-          </tr>
-          <tr>
-            <td>Gina Witherspoon</td>
-            <td>USD 365 - Vice President</td>
-          </tr>
-          <tr>
-            <td>Adam Caylor</td>
-            <td>USD 365 - President</td>
-          </tr>
-          <tr>
-            <td>Travis Church</td>
-            <td>USD 479 #4 - President</td>
-          </tr>
-          <tr>
-            <td>Kevin Nilges</td>
-            <td>USD 479 #2 - Vice President</td>
-          </tr>
-          <tr>
-            <td>Jamie Henderson</td>
-            <td>USD 479 #1</td>
-          </tr>
-          <tr>
-            <td>Laura Schmidt</td>
-            <td>USD 479 #3</td>
-          </tr>
-          <tr>
-            <td>Lance Ramsey</td>
-            <td>USD 479 #5</td>
-          </tr>
-          <tr>
-            <td>Seth Black</td>
-            <td>USD 479 #6</td>
-          </tr>
-          <tr>
-            <td>Nathan Beckmon</td>
-            <td>USD 479 At-Large</td>
-          </tr>
-          <!-- Add more rows as needed -->
         </tbody>
       </table>
       <div id="resultCount" class="result-count"></div>
@@ -312,6 +226,42 @@
         sortColumnIndex = 0;
         sortAscending = true;
         renderTablePage();
+      });
+
+      async function populateLeadersTableFromCSV(csvPath) {
+        try {
+          const response = await fetch(csvPath);
+          if (!response.ok) throw new Error("CSV file not found");
+        
+          const csvText = await response.text();
+          const rows = csvText.trim().split("\n");
+        
+          const tableBody = document.querySelector("#leadersTable tbody");
+          tableBody.innerHTML = ""; // Clear existing hardcoded rows
+        
+          for (const row of rows) {
+            const [name, position] = row.split(",");
+          
+            const tr = document.createElement("tr");
+          
+            const tdName = document.createElement("td");
+            tdName.textContent = name.trim();
+          
+            const tdPosition = document.createElement("td");
+            tdPosition.textContent = position.trim();
+          
+            tr.appendChild(tdName);
+            tr.appendChild(tdPosition);
+            tableBody.appendChild(tr);
+          }
+        } catch (error) {
+          console.error("Failed to load CSV data:", error);
+        }
+      }
+    
+      // Load CSV on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        populateLeadersTableFromCSV("reps.csv");
       });
     </script>       
   </main>
