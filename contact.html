@@ -1,112 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>Contact Us - Anderson County Republican Party</title>
-  
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Contact Us - Anderson County Republican Party
+  </title>
   <!-- Basic SEO -->
-  <meta name="description" content="Get in touch to learn more about our mission" />
-  <meta name="keywords" content="Anderson County, Republican Party, Kansas, Conservative, Local Elections, Community Engagement" />
-  <meta name="author" content="Anderson County Republican Party" />
-  
+  <meta content="Get in touch to learn more about our mission" name="description"/>
+  <meta content="Anderson County, Republican Party, Kansas, Conservative, Local Elections, Community Engagement" name="keywords"/>
+  <meta content="Anderson County Republican Party" name="author"/>
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images\elephant.png" />
+  <link href="images\elephant.png" rel="icon" type="image/png"/>
   <!-- Or you can use an ICO file -->
   <!-- <link rel="icon" href="favicon.ico" /> -->
-  
   <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css" />
-  
+  <link href="style.css" rel="stylesheet"/>
   <!-- Optional: Open Graph tags for social media sharing -->
-  <meta property="og:title" content="Contact Us - Anderson County Republican Party" />
-  <meta property="og:description" content="Get in touch to learn more about our mission." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ancogop.org/about" />
-  <meta property="og:image" content="https://ancogop.org/images/elephant.png" />
-  
+  <meta content="Contact Us - Anderson County Republican Party" property="og:title"/>
+  <meta content="Get in touch to learn more about our mission." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://ancogop.org/about" property="og:url"/>
+  <meta content="https://ancogop.org/images/elephant.png" property="og:image"/>
   <!-- Optional: Twitter Card tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact - Anderson County Republican Party" />
-  <meta name="twitter:description" content="Get in touch to learn more about our mission." />
-  <meta name="twitter:image" content="https://ancogop.org/images/elephant.png" />
-</head>
-<body>
-  <header>
-    <div class="top-bar">
-      <div class="social-buttons" aria-label="Social Media Links">
-        <a href="https://www.facebook.com/profile.php?id=61575765069116#" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://x.com/ancogop" class="x" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-      </div>
-      <h1><a href="/" class="header-link">ANDERSON COUNTY REPUBLICAN PARTY</a></h1>
-      <div class="donate">
-        <a href="donate">Donate</a>
-      </div>
-    </div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="about">About Us</a>
-      <a href="documents">Documents</a>
-      <a href="local-reps">Local Representatives</a>
-      <a href="contact" aria-current="page">Contact</a>
-    </nav>
-  </header>
-
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Contact - Anderson County Republican Party" name="twitter:title"/>
+  <meta content="Get in touch to learn more about our mission." name="twitter:description"/>
+  <meta content="https://ancogop.org/images/elephant.png" name="twitter:image"/>
+ </head>
+ <body>
+  <!--#include virtual="header.html" -->
   <main>
-    <h2 class="page-title">Contact Us</h2>
-    <section class="contact-form left-aligned">
-      <form action="https://formsubmit.co/contact@ancogop.org" method="POST">
-        <!-- FormSubmit hidden fields -->
-        <input type="hidden" name="_next" value="https://ancogop.org/thank-you">
-        <input type="hidden" name="_captcha" value="false">
-      
-        <label for="name">Name <span class="required">*</span></label>
-        <input type="text" id="name" name="name" required placeholder="Your full name">
-      
-        <label for="email">Email <span class="required">*</span></label>
-        <input type="email" id="email" name="email" required placeholder="you@example.com">
-      
-        <label for="message">Message <span class="required">*</span></label>
-        <textarea id="message" name="message" rows="6" required placeholder="Type your message here..."></textarea>
-      
-        <div class="form-submit-row">
-          <button type="submit" class="btn-contact">Send Message</button>
-          <p class="form-note"><span class="required">*</span> indicates a required field.</p>
-        </div>        
-      </form>
-    </section>
+   <h2 class="page-title">
+    Contact Us
+   </h2>
+   <section class="contact-form left-aligned">
+    <form action="https://formsubmit.co/contact@ancogop.org" method="POST">
+     <!-- FormSubmit hidden fields -->
+     <input name="_next" type="hidden" value="https://ancogop.org/thank-you"/>
+     <input name="_captcha" type="hidden" value="false"/>
+     <label for="name">
+      Name
+      <span class="required">
+       *
+      </span>
+     </label>
+     <input id="name" name="name" placeholder="Your full name" required="" type="text"/>
+     <label for="email">
+      Email
+      <span class="required">
+       *
+      </span>
+     </label>
+     <input id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+     <label for="message">
+      Message
+      <span class="required">
+       *
+      </span>
+     </label>
+     <textarea id="message" name="message" placeholder="Type your message here..." required="" rows="6"></textarea>
+     <div class="form-submit-row">
+      <button class="btn-contact" type="submit">
+       Send Message
+      </button>
+      <p class="form-note">
+       <span class="required">
+        *
+       </span>
+       indicates a required field.
+      </p>
+     </div>
+    </form>
+   </section>
   </main>
-
   <!-- Footer links section -->
   <div class="footer-links">
-    <a href="https://kansas.gop/" target="_blank">Kansas GOP</a>
-    <a href="https://www.gop.com/" target="_blank">Republican National Committee</a>
-    <a href="donate" target="_blank">Donate</a>
+   <a href="https://kansas.gop/" target="_blank">
+    Kansas GOP
+   </a>
+   <a href="https://www.gop.com/" target="_blank">
+    Republican National Committee
+   </a>
+   <a href="donate" target="_blank">
+    Donate
+   </a>
   </div>
-
   <!-- Main footer -->
-  <footer>
-    <img src="images/elephant.png" alt="Republican Elephant" class="footer-elephant" />
-    <p>© 2025 Anderson County Republican Central Committee. All rights reserved.</p>
-    <div class="donate">
-      <a href="contact">Contact Us</a>
-    </div>
-  </footer>
-
+  <!--#include virtual="footer.html" -->
   <div class="footer-disclaimer">
-    <p>
-      Paid for by the Anderson County Republican Central Committee. Jeremy DuPont, Treasurer.<br />
-      412 E 2nd Ave, Garnett, KS 66032<br />
-      Not authorized by any candidate or candidates committee.
-    </p>
+   <p>
+    Paid for by the Anderson County Republican Central Committee. Jeremy DuPont, Treasurer.
+    <br/>
+    412 E 2nd Ave, Garnett, KS 66032
+    <br/>
+    Not authorized by any candidate or candidates committee.
+   </p>
   </div>
-</body>
+ </body>
 </html>
