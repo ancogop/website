@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <title>Documents - Anderson County Republican Party</title>
+  <title>Contact Us - Anderson County Republican Party</title>
   
   <!-- Basic SEO -->
-  <meta name="description" content="Browse important documents, including meeting minutes and financial filings" />
+  <meta name="description" content="Get in touch to learn more about our mission" />
   <meta name="keywords" content="Anderson County, Republican Party, Kansas, Conservative, Local Elections, Community Engagement" />
   <meta name="author" content="Anderson County Republican Party" />
   
@@ -23,16 +23,16 @@
   <link rel="stylesheet" href="style.css" />
   
   <!-- Optional: Open Graph tags for social media sharing -->
-  <meta property="og:title" content="Documents - Anderson County Republican Party" />
-  <meta property="og:description" content="Browse important documents, including meeting minutes and financial filings." />
+  <meta property="og:title" content="Contact Us - Anderson County Republican Party" />
+  <meta property="og:description" content="Get in touch to learn more about our mission." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ancogop.org/documents" />
+  <meta property="og:url" content="https://ancogop.org/about" />
   <meta property="og:image" content="https://ancogop.org/images/elephant.png" />
   
   <!-- Optional: Twitter Card tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Documents - Anderson County Republican Party" />
-  <meta name="twitter:description" content="Browse important documents, including meeting minutes and financial filings." />
+  <meta name="twitter:title" content="Contact - Anderson County Republican Party" />
+  <meta name="twitter:description" content="Get in touch to learn more about our mission." />
   <meta name="twitter:image" content="https://ancogop.org/images/elephant.png" />
 </head>
 <body>
@@ -54,27 +54,35 @@
     <nav>
       <a href="/">Home</a>
       <a href="about">About Us</a>
-      <a href="documents" aria-current="page">Documents</a>
+      <a href="documents">Documents</a>
       <a href="local-reps">Local Representatives</a>
-      <a href="contact">Contact</a>
+      <a href="contact" aria-current="page">Contact</a>
     </nav>
   </header>
 
   <main>
-    <h2 class="page-title">Meeting Minutes</h2>
-    <ul class="documents-list">
-      <li>
-        <span>Minutes: November 14th, 2024 (Reorganizational Meeting)</span>
-        <a href="files/minutes/11-14-2024.pdf" download="Minutes - November 14th, 2024 (Reorganizational Meeting)">Download</a>
-      </li>
-    </ul>
-    <h2 class="page-title">Statement of Organization</h2>
-    <ul class="documents-list">
-      <li>
-        <span>Statement of Organization - November 16th, 2024</span>
-        <a href="files/statement-of-organization-11162024.pdf" download="Statement of Organization - November 16th, 2024">Download</a>
-      </li>
-    </ul>
+    <h2 class="page-title">Contact Us</h2>
+    <section class="contact-form left-aligned">
+      <form action="https://formsubmit.co/contact@ancogop.org" method="POST">
+        <!-- FormSubmit hidden fields -->
+        <input type="hidden" name="_next" value="https://ancogop.org/thank-you">
+        <input type="hidden" name="_captcha" value="false">
+      
+        <label for="name">Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="Your full name">
+      
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+      
+        <label for="message">Message <span class="required">*</span></label>
+        <textarea id="message" name="message" rows="6" required placeholder="Type your message here..."></textarea>
+      
+        <div class="form-submit-row">
+          <button type="submit" class="btn-contact">Send Message</button>
+          <p class="form-note"><span class="required">*</span> indicates a required field.</p>
+        </div>        
+      </form>
+    </section>
   </main>
 
   <!-- Footer links section -->
