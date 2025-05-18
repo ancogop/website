@@ -192,6 +192,24 @@ nav a[aria-current="page"] {
   text-align: center;
 }
 
+.get-involved-card {
+  max-width: 700px;
+  margin: 0 auto 30px auto; /* center horizontally, add bottom spacing */
+  background-color: #fafafa;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.get-involved-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+}
+
 /* Representatives section */
 .representatives {
   margin-bottom: 40px;
