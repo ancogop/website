@@ -697,6 +697,43 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Mobile Nav Enhancements */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  color: #002868;
+  padding: 10px;
+  user-select: none;
+  display: none; /* hidden by default */
+}
+
+#mobileNav {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#mobileNav a {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  color: #002868;
+}
+
+#mobileNav a[aria-current="page"] {
+  background-color: #002868;
+  color: white;
+}
+
+#mobileNav.expanded {
+  max-height: 500px; /* Enough for all links */
+  opacity: 1;
+}
+
 
 /* Animations */
 @keyframes slideInLeft {
@@ -716,6 +753,7 @@ html {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: space-between;
   }
 
   .top-bar h1 {
@@ -757,16 +795,31 @@ html {
     margin-right: 8px;
   }
 
-  nav {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
   }
 
   nav a {
-    display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   footer {
