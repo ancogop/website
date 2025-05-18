@@ -839,15 +839,51 @@ html {
   }
 
   nav {
+    flex-wrap: wrap;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+    border-top: 3px solid var(--party-red);
+    border-bottom: 3px solid var(--party-blue);
+    background: transparent; /* keep original */
   }
 
   nav a {
+    flex: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    text-align: center; /* center aligned text */
+    color: inherit; /* keep red/blue from desktop */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* subtle separator */
+    position: relative;
+  }
+
+  nav a:not(:last-child)::before {
+    display: none; /* remove vertical dividers */
+  }
+
+  nav a::after {
+    /* keep underline hover effect */
     display: block;
-    width: 100%;
-    text-align: center;
+    bottom: 4px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  nav a[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
+  nav a[aria-current="page"]:hover::after {
+    transform: scaleX(1);
   }
 
   footer {
