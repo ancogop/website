@@ -839,33 +839,38 @@ html {
   }
 
   nav {
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
     border-top: 3px solid var(--party-red);
     border-bottom: 3px solid var(--party-blue);
-    background: transparent; /* keep original */
   }
 
   nav a {
     flex: none;
     padding: 12px 15px;
     font-size: 16px;
-    text-align: center; /* center aligned text */
-    color: inherit; /* keep red/blue from desktop */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* subtle separator */
-    position: relative;
+    text-align: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
-  nav a:not(:last-child)::before {
-    display: none; /* remove vertical dividers */
+  /* Alternate red/blue vertically instead of horizontally */
+  nav a:nth-child(4n+1),
+  nav a:nth-child(4n+4) {
+    color: var(--party-red);
+  }
+
+  nav a:nth-child(4n+2),
+  nav a:nth-child(4n+3) {
+    color: var(--party-blue);
   }
 
   nav a::after {
-    /* keep underline hover effect */
-    display: block;
     bottom: 4px;
-    left: 25%;
-    width: 50%;
+    left: 20%;
+    width: 60%;
     height: 2px;
     background-color: currentColor;
     transform: scaleX(0);
@@ -874,16 +879,15 @@ html {
     pointer-events: none;
   }
 
-  nav a:hover::after {
-    transform: scaleX(1);
-  }
-
-  nav a[aria-current="page"]::after {
-    transform: scaleX(1);
-  }
-
+  nav a:hover::after,
+  nav a[aria-current="page"]::after,
   nav a[aria-current="page"]:hover::after {
     transform: scaleX(1);
+  }
+
+  /* Remove desktop-only dividers */
+  nav a:not(:last-child)::before {
+    display: none;
   }
 
   footer {
