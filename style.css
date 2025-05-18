@@ -783,7 +783,7 @@ html {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .top-bar {
     flex-direction: column;
     align-items: center;
@@ -906,7 +906,7 @@ html {
   }
 
   .welcome-text h2 {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .welcome-text p {
@@ -944,9 +944,7 @@ html {
     gap: 12px;
     align-items: center;
   }
-}
 
-@media (max-width: 700px) {
   .footer-links {
     flex-direction: column;
     gap: 12px; /* vertical spacing between buttons */
