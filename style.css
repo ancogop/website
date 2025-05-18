@@ -763,6 +763,12 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Hide elephant by default (desktop) */
+.elephant-logo {
+  display: none;
+  width: 40px;
+  height: auto;
+}
 
 /* Animations */
 @keyframes slideInLeft {
@@ -795,27 +801,36 @@ html {
   }
 
   .header-controls {
-    order: 2;
     display: flex;
-    justify-content: space-between;  /* push social left, donate right */
+    justify-content: space-between; /* spread items */
+    align-items: center;
     width: 100%;
-    max-width: 320px; /* or adjust as needed */
-    padding: 0 10px;
+  }
+
+  /* Show elephant */
+  .elephant-logo {
+    display: block;
+    order: 1; /* left */
+  }
+
+  /* Donate in center */
+  .donate {
+    order: 2;
+    flex: none;
+    text-align: center;
+  }
+
+  /* Social icons on right */
+  .social-buttons {
+    order: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
   }
 
   .social-buttons,
   .donate {
     margin: 0;
-  }
-
-  .social-buttons {
-    justify-content: flex-start; /* align left */
-    gap: 15px;
-  }
-
-  .donate {
-    display: flex;
-    justify-content: flex-end; /* align right */
   }
 
   .social-buttons a {
