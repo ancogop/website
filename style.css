@@ -186,6 +186,12 @@ nav a[aria-current="page"] {
   border: 1px solid #ddd;
 }
 
+.get-involved h2 {
+  color: #c60c30;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* Representatives section */
 .representatives {
   margin-bottom: 40px;
@@ -488,7 +494,7 @@ footer {
 
 .section-divider {
   width: 80%;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 20px auto;
   border-bottom: 2px solid #002868;
 }
 
