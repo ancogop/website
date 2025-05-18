@@ -608,9 +608,8 @@ footer {
 }
 
 .section-divider {
-  width: 80%;
   margin: 0 auto 20px auto;
-  border-bottom: 2px solid var(--party-blue);
+  border-bottom: 1px solid #ccc;
 }
 
 .header-link {
