@@ -15,9 +15,39 @@ header {
 
 .top-bar {
   display: flex;
+  align-items: center;
+  justify-content: space-between; /* keep left and right apart */
+  position: relative; /* for absolute positioning of h1 */
+  padding: 10px 0;
+}
+
+.top-bar h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  white-space: nowrap;
+  pointer-events: none; /* so clicks go through to links if needed */
+  font-size: 28px;
+  color: #c60c30;
+  text-align: center;
+  width: max-content; /* shrink to fit text */
+  z-index: 1;
+}
+
+.header-controls {
+  flex: 1;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  gap: 20px;
+  position: relative; /* keep it on top for clicks */
+  z-index: 2;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
 }
 
 .social-buttons a {
@@ -689,16 +719,42 @@ html {
   }
 
   .top-bar h1 {
-    font-size: 20px;
-    margin: 10px 0;
+    position: static !important;
+    transform: none !important;
+    white-space: nowrap;
+    width: auto !important;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    pointer-events: auto;
+  }
+
+  .header-controls {
+    order: 2;
+    display: flex;
+    justify-content: space-between;  /* push social left, donate right */
+    width: 100%;
+    max-width: 320px; /* or adjust as needed */
+    padding: 0 10px;
+  }
+
+  .social-buttons,
+  .donate {
+    margin: 0;
   }
 
   .social-buttons {
-    margin-bottom: 10px;
+    justify-content: flex-start; /* align left */
+    gap: 15px;
   }
 
   .donate {
-    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end; /* align right */
+  }
+
+  .social-buttons a {
+    font-size: 18px;
+    margin-right: 8px;
   }
 
   nav {
