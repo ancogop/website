@@ -1,3 +1,10 @@
+:root {
+  --party-red: #de0100;
+  --party-red-hover: #a80000;
+  --party-blue: #1404bd;
+  --party-blue-hover: #3a29f7;
+}
+
 /* Basic fixed width container */
 body {
   font-family: Arial, sans-serif;
@@ -29,7 +36,7 @@ header {
   white-space: nowrap;
   pointer-events: none; /* so clicks go through to links if needed */
   font-size: 28px;
-  color: #c60c30;
+  color: var(--party-red);
   text-align: center;
   width: max-content; /* shrink to fit text */
   z-index: 1;
@@ -66,7 +73,7 @@ header {
 }
 
 .social-buttons a.facebook {
-  color: #002868;
+  color: var(--party-blue);
 }
 
 .social-buttons a.x {
@@ -76,7 +83,7 @@ header {
 .donate a,
 .btn-about,
 .documents-list li a {
-  background-color: #002868;
+  background-color: var(--party-blue);
   color: white;
   padding: 8px 15px;
   text-decoration: none;
@@ -88,36 +95,96 @@ header {
 .donate a:hover,
 .btn-about:hover,
 .documents-list li a:hover {
-  background-color: #0045ad;
+  background-color: var(--party-blue-hover);
 }
 
 h1 {
   text-align: center;
   font-size: 28px;
-  color: #c60c30;
+  color: var(--party-red);
   margin: 10px 0 15px;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  background-color: #f1f1f1;
-  padding: 10px 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-top: 3px solid var(--party-red);
+  border-bottom: 3px solid var(--party-blue);
+  background: transparent;
 }
 
 nav a {
-  color: #002868;
-  text-decoration: none;
+  flex: 1;
+  padding: 10px 0;
+  background: transparent;
+  color: var(--white);
   font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
-  color: #c60c30;
-  text-decoration: underline;
+/* Alternate red/blue text color */
+nav a:nth-child(odd) {
+  color: var(--party-red);
+}
+nav a:nth-child(even) {
+  color: var(--party-blue);
+}
+
+/* Underline on hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Slide in on hover, except current page */
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Static underline on current page */
+nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+  bottom: 4px;
+  height: 2px;
+  transition: none;
+}
+
+/* Prevent hover animation on current page */
+nav a[aria-current="page"]:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Alternating red/blue vertical dividers between buttons */
+nav a:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 1px;
+  height: 60%;
+  background-color: currentColor;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Welcome section */
@@ -140,7 +207,7 @@ nav a[aria-current="page"] {
 .welcome-text h2 {
   font-size: 26px;
   font-weight: 700;
-  color: #c60c30;
+  color: var(--party-red);
   margin-bottom: 1px;
   letter-spacing: 0.03em;
   max-width: 600px;
@@ -198,7 +265,7 @@ nav a[aria-current="page"] {
 }
 
 .meeting-text h2 {
-  color: #c60c30;
+  color: var(--party-red);
   margin-top: 0;
   font-size: 22px;
 }
@@ -217,7 +284,7 @@ nav a[aria-current="page"] {
 }
 
 .get-involved h2 {
-  color: #c60c30;
+  color: var(--party-red);
   margin-bottom: 20px;
   text-align: center;
 }
@@ -246,14 +313,14 @@ nav a[aria-current="page"] {
 }
 
 .representatives h2 {
-  color: #c60c30;
+  color: var(--party-red);
   margin-bottom: 20px;
   text-align: center;
 }
 
 .representatives h3 {
   margin-top: 25px;
-  color: #002868;
+  color: var(--party-blue);
 }
 
 .rep-list {
@@ -290,7 +357,7 @@ nav a[aria-current="page"] {
 }
 
 .rep-info a {
-  color: #002868;
+  color: var(--party-blue);
   text-decoration: none;
 }
 
@@ -303,7 +370,7 @@ nav a[aria-current="page"] {
 }
 
 .rep-title {
-  color: #c60c30;
+  color: var(--party-red);
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 2px;
@@ -324,7 +391,7 @@ nav a[aria-current="page"] {
 }
 
 .local-leaders-table th {
-  background-color: #002868;
+  background-color: var(--party-blue);
   color: white;
   cursor: pointer;
 }
@@ -349,7 +416,7 @@ nav a[aria-current="page"] {
 
 .table-search label {
   font-weight: bold;
-  color: #002868;
+  color: var(--party-blue);
   white-space: nowrap;
 }
 
@@ -414,7 +481,7 @@ nav a[aria-current="page"] {
 }
 
 .pagination-controls button.active {
-  background-color: #002868;
+  background-color: var(--party-blue);
   color: white;
   font-weight: bold;
 }
@@ -456,7 +523,7 @@ nav a[aria-current="page"] {
 .footer-links a {
   flex: 1; /* each button fills equal space */
   padding: 10px 0;
-  background-color: #002868; /* party blue */
+  background-color: var(--party-blue); /* party blue */
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -478,13 +545,13 @@ nav a[aria-current="page"] {
   right: 0;
   width: 1px;
   height: 60%;
-  background-color: white; /* slightly lighter blue for contrast */
+  background-color: white;
   pointer-events: none;
 }
 
 /* Hover style */
 .footer-links a:hover {
-  background-color: #0045ad;
+  background-color: var(--party-blue-hover);
 }
 
 .footer-disclaimer {
@@ -517,7 +584,7 @@ footer {
 }
 
 .page-title {
-  color: #c60c30;
+  color: var(--party-red);
   font-size: 24px;
   margin: 25px 0 15px;
   margin-bottom: 10px;
@@ -543,7 +610,7 @@ footer {
 .section-divider {
   width: 80%;
   margin: 0 auto 20px auto;
-  border-bottom: 2px solid #002868;
+  border-bottom: 2px solid var(--party-blue);
 }
 
 .header-link {
@@ -582,13 +649,13 @@ footer {
 
 .contact-form label {
   font-weight: bold;
-  color: #002868;
+  color: var(--party-blue);
   margin-bottom: 5px;
   display: block;
 }
 
 .contact-form .required {
-  color: #c60c30;
+  color: var(--party-red);
   margin-left: 4px;
 }
 
@@ -609,7 +676,7 @@ footer {
 }
 
 .btn-contact {
-  background-color: #002868;
+  background-color: var(--party-blue);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -622,7 +689,7 @@ footer {
 }
 
 .btn-contact:hover {
-  background-color: #0045ad;
+  background-color: var(--party-blue-hover);
 }
 
 .form-note {
@@ -666,7 +733,7 @@ footer {
 
 .thank-you-section h1 {
   font-size: 32px;
-  color: #c60c30; /* your red accent */
+  color: var(--party-red); /* your red accent */
   margin-bottom: 20px;
 }
 
@@ -679,7 +746,7 @@ footer {
 
 .thank-you-section .btn-home {
   display: inline-block;
-  background-color: #002868; /* your deep blue */
+  background-color: var(--party-blue); /* your deep blue */
   color: white;
   padding: 12px 25px;
   border-radius: 5px;
@@ -690,7 +757,7 @@ footer {
 }
 
 .thank-you-section .btn-home:hover {
-  background-color: #0045ad;
+  background-color: var(--party-blue-hover);
 }
 
 html {
