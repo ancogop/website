@@ -678,11 +678,6 @@ footer {
   justify-content: center;
 }
 
-.header-link span {
-  white-space: nowrap;
-  font-size: clamp(16px, 4vw, 28px);
-}
-
 /* Fix box sizing globally */
 *,
 *::before,
@@ -854,6 +849,7 @@ html {
     gap: 2px;
     align-items: center;
     white-space: normal;
+    font-size: clamp(16px, 4vw, 28px);
   }
 }
 
