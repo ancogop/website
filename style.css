@@ -269,7 +269,7 @@ nav a:not(:last-child)::before {
 }
 
 .meeting-text h2 {
-  color: var(--party-red);
+  color: var(--party-blue);
   margin-top: 0;
   font-size: 22px;
 }
@@ -297,7 +297,7 @@ nav a:not(:last-child)::before {
   max-width: 700px;
   margin: 0 auto 30px auto; /* center horizontally, add bottom spacing */
   background-color: #fafafa;
-  padding: 30px 40px;
+  padding: 10px 40px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
@@ -1002,11 +1002,8 @@ html {
 
   .welcome-text {
     max-width: 100%;
-    padding: 10px;
-  }
-
-  .welcome-text h2 {
-    font-size: 19px;
+    padding: 0px;
+    text-align: center;
   }
 
   .welcome-text p {
