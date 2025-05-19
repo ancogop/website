@@ -680,7 +680,7 @@ footer {
 
 .header-link span {
   white-space: nowrap;
-  font-size: clamp(20px, 4vw, 28px);
+  font-size: clamp(16px, 4vw, 28px);
 }
 
 /* Fix box sizing globally */
@@ -853,6 +853,7 @@ html {
     flex-direction: column;
     gap: 2px;
     align-items: center;
+    white-space: normal;
   }
 }
 
@@ -873,11 +874,11 @@ html {
   .top-bar h1 {
     position: static !important;
     transform: none !important;
-    white-space: nowrap;
     width: auto !important;
     margin: 0 0 10px 0;
     font-size: 18px;
     pointer-events: auto;
+    white-space: nowrap; /* keep for tablets */
   }
 
   .header-controls {
