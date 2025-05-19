@@ -33,13 +33,17 @@ header {
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  white-space: nowrap;
-  pointer-events: none; /* so clicks go through to links if needed */
-  font-size: 28px;
+  font-size: clamp(16px, 4vw, 28px); /* 🔥 responsive sizing */
+  white-space: nowrap; /* keep on one line if possible */
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  max-width: 100%;
+  width: max-content;
   color: var(--party-red);
   text-align: center;
-  width: max-content; /* shrink to fit text */
-  z-index: 1;
+  pointer-events: auto;
+  z-index: 3;
 }
 
 .header-controls {
@@ -666,8 +670,17 @@ footer {
 }
 
 .header-link {
+  display: inline-flex;
+  gap: 6px;
   text-decoration: none;
   color: inherit;
+  flex-wrap: wrap; /* wrap just in case it can't fit */
+  justify-content: center;
+}
+
+.header-link span {
+  white-space: nowrap;
+  font-size: clamp(20px, 4vw, 28px);
 }
 
 /* Fix box sizing globally */
@@ -832,6 +845,20 @@ html {
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 420px) {
+  .header-link {
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  body {
+    padding: 0 24px;
   }
 }
 
