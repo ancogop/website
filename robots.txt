@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /thank-you
 Disallow: /thank-you.html
+Disallow: /thank-you-mail.html
+Disallow: /thank-you-mail
 Disallow: /reps.csv
 Sitemap: https://ancogop.org/sitemap.xml
