@@ -38,38 +38,10 @@
   <meta name="twitter:description" content="Promoting conservative values and community engagement in Anderson County, Kansas." />
   <meta name="twitter:image" content="https://ancogop.org/images/elephant.png" />
 </head>
-  
+
 <body>
   <!-- Header -->
-  <header>
-    <div class="top-bar">
-      <h1><a href="/" class="header-link">ANDERSON COUNTY REPUBLICAN PARTY</a></h1>
-      <div class="header-controls">
-        <div class="social-buttons" aria-label="Social Media Links">
-          <a href="https://www.facebook.com/profile.php?id=61575765069116#" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://x.com/ancogop" class="x" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-        </div>
-        <img src="images/elephant.png" alt="Republican Elephant" class="elephant-logo" />
-        <div class="donate">
-          <a href="donate">DONATE</a>
-        </div>
-      </div>
-    </div>
-    <nav>
-      <a href="/" aria-current="page">HOME</a>
-      <a href="about">ABOUT US</a>
-      <a href="documents">DOCUMENTS</a>
-      <a href="officials">LOCAL OFFICIALS</a>
-      <a href="contact">CONTACT</a>
-    </nav>
-    <div class="frontpage-banner">
-      <img src="images/gw.webp" alt="George Washington Crossing the Delaware" />
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- Main Content -->
   <main>
@@ -268,5 +240,24 @@
       Not authorized by any candidate or candidates committee.
     </p>
   </div>
+
+  <!-- Javascript -->
+  <script>
+    // Load Header
+    fetch('/common/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+  
+        // Highlight the correct nav link
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        document.querySelectorAll('#site-header nav a').forEach(link => {
+          const href = link.getAttribute('href').replace(/\/$/, '');
+          if (href === currentPath || (href === '/' && currentPath === '')) {
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+  </script>
 </body>
 </html>
