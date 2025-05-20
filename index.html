@@ -40,13 +40,50 @@
 </head>
 
 <body>
-  <!-- Header Placeholder -->
-  <div id="site-header"></div>
+  <!-- Header -->
+  <header>
+    <!-- Top bar -->
+    <div class="top-bar">
+      <!-- Clickable site title -->
+      <h1><a href="/" class="header-link">ANDERSON COUNTY REPUBLICAN PARTY</a></h1>
+      <!-- Social links / donate button -->
+      <div class="header-controls">
+        <!-- Social Links -->
+        <div class="social-buttons" aria-label="Social Media Links">
+          <a href="https://www.facebook.com/profile.php?id=61575765069116#" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/ancogop" class="x" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+        <!-- Republican Elephant on Mobile -->
+        <img src="images/elephant.png" alt="Republican Elephant" class="elephant-logo" />
+        <!-- Donate Button -->
+        <div class="donate">
+          <a href="donate">DONATE</a>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <nav>
+      <a href="/" aria-current="page">HOME</a>
+      <a href="about">ABOUT US</a>
+      <a href="documents">DOCUMENTS</a>
+      <a href="officials">LOCAL OFFICIALS</a>
+      <a href="contact">CONTACT</a>
+    </nav>
+    <!-- Banner - George Washington Crossing Delaware -->
+    <div class="frontpage-banner">
+      <img src="images/gw.webp" alt="George Washington Crossing the Delaware" />
+    </div>
+  </header>
 
   <!-- Main Content -->
   <main>
     <!-- Welcome to GOP Section -->
     <section class="welcome-section">
+      <!-- Welcome text - slides in from left -->
       <div class="welcome-text">
         <h2>WELCOME TO THE GOP</h2>
         <p>
@@ -54,6 +91,7 @@
         </p>
         <a href="about" class="btn-about">LEARN MORE</a>
       </div>
+      <!-- Courthouse Photo -->
       <img src="images/courthouse.webp" alt="County Courthouse" class="courthouse-img" loading="eager" />
     </section>
 
@@ -74,6 +112,7 @@
 
     <!-- Meeting Information Section -->
     <section class="meeting-section">
+      <!-- Google Maps iframe -->
       <div class="meeting-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.899012996544!2d-95.24263618470063!3d38.28405487965704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c79022940d3f01%3A0x8c47d0f854157974!2s405%20N%20Maple%20St%2C%20Garnett%2C%20KS%2066032!5e0!3m2!1sen!2sus!4v1715700000000!5m2!1sen!2sus"
@@ -81,6 +120,7 @@
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
+      <!-- Meeting Information Box -->
       <div class="meeting-text">
         <div class="meeting-card">
           <h2>Meeting Dates & Location</h2>
@@ -226,7 +266,7 @@
   <!-- Main footer -->
   <footer>
     <img src="images/elephant.png" alt="Republican Elephant" class="footer-elephant" />
-    <p>© 2025 Anderson County Republican Central Committee. All rights reserved.</p>
+    <p>© <span id="year"></span> Anderson County Republican Central Committee. All rights reserved.</p>
     <div class="donate">
       <a href="contact">CONTACT US</a>
     </div>
@@ -243,21 +283,7 @@
 
   <!-- Javascript -->
   <script>
-    // Load Header
-    fetch('/common/header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('site-header').innerHTML = html;
-  
-        // Underline the correct nav link
-        const currentPath = window.location.pathname.replace(/\/$/, '');
-        document.querySelectorAll('#site-header nav a').forEach(link => {
-          const href = link.getAttribute('href').replace(/\/$/, '');
-          if (href === currentPath || (href === '/' && currentPath === '')) {
-            link.setAttribute('aria-current', 'page');
-          }
-        });
-      });
-  </script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>  
 </body>
 </html>
