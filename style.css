@@ -46,6 +46,10 @@ header {
   z-index: 3;
 }
 
+#site-header {
+  min-height: 200px;
+}
+
 .header-controls {
   flex: 1;
   display: flex;

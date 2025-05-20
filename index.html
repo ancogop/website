@@ -40,25 +40,8 @@
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Header Placeholder -->
   <div id="site-header"></div>
-  <script>
-    // Load Header
-    fetch('/common/header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('site-header').innerHTML = html;
-  
-        // Highlight the correct nav link
-        const currentPath = window.location.pathname.replace(/\/$/, '');
-        document.querySelectorAll('#site-header nav a').forEach(link => {
-          const href = link.getAttribute('href').replace(/\/$/, '');
-          if (href === currentPath || (href === '/' && currentPath === '')) {
-            link.setAttribute('aria-current', 'page');
-          }
-        });
-      });
-  </script>
 
   <!-- Main Content -->
   <main>
@@ -257,5 +240,24 @@
       Not authorized by any candidate or candidates committee.
     </p>
   </div>
+
+  <!-- Javascript -->
+  <script>
+    // Load Header
+    fetch('/common/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+  
+        // Underline the correct nav link
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        document.querySelectorAll('#site-header nav a').forEach(link => {
+          const href = link.getAttribute('href').replace(/\/$/, '');
+          if (href === currentPath || (href === '/' && currentPath === '')) {
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+  </script>
 </body>
 </html>
