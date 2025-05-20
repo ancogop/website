@@ -137,103 +137,7 @@
     <!-- Meet your Representatives Section -->
     <section class="representatives">
       <h2>MEET YOUR REPRESENTATIVES</h2>
-      <div class="rep-list">
-        <!-- Jerry Moran -->
-        <div class="rep-card">
-          <img src="images/moran.jpg" alt="Jerry Moran" />
-          <div class="rep-info">
-            <p class="rep-title">U.S. Senator</p>
-            <p><strong>Jerry Moran</strong></p>
-            <p class="rep-party">Republican</p>
-            <p>
-              <a href="https://www.moran.senate.gov/public/index.cfm/e-mail-jerry">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </p>
-            <p>
-              <a href="tel:9133930711">
-                <i class="fas fa-phone"></i> (913) 393-0711
-              </a>
-            </p>
-          </div>
-        </div>
-        <!-- Roger Marshall -->
-        <div class="rep-card">
-          <img src="images/marshall.jpg" alt="Roger Marshall" />
-          <div class="rep-info">
-            <p class="rep-title">U.S. Senator</p>
-            <p><strong>Roger Marshall</strong></p>
-            <p class="rep-party">Republican</p>
-            <p>
-              <a href="https://www.marshall.senate.gov/contact/contact-form/">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </p>
-            <p>
-              <a href="tel:9138797070">
-                <i class="fas fa-phone"></i> (913) 879-7070
-              </a>
-            </p>
-          </div>
-        </div>
-        <!-- Sharice Davids -->
-        <div class="rep-card">
-          <img src="images/davids.webp" alt="Sharice Davids" />
-          <div class="rep-info">
-            <p class="rep-title">U.S. Representative</p>
-            <p><strong>Sharice Davids</strong></p>
-            <p class="rep-party">Democrat</p>
-            <p>
-              <a href="https://davids.house.gov/address_authentication?form=/contact/email-me">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </p>
-            <p>
-              <a href="tel:9136210832">
-                <i class="fas fa-phone"></i> (913) 621-0832
-              </a>
-            </p>
-          </div>
-        </div>
-        <!-- Caryn Tyson -->
-        <div class="rep-card">
-          <img src="images/tyson.jpg" alt="Caryn Tyson" />
-          <div class="rep-info">
-            <p class="rep-title">State Senator</p>
-            <p><strong>Caryn Tyson</strong></p>
-            <p class="rep-party">Republican</p>
-            <p>
-              <a href="mailto:Caryn.Tyson@senate.ks.gov">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </p>
-            <p>
-              <a href="tel:7852966838">
-                <i class="fas fa-phone"></i> (785) 296-6838
-              </a>
-            </p>
-          </div>
-        </div>
-        <!-- Fred Gardner -->
-        <div class="rep-card">
-          <img src="images/gardner.jpg" alt="Fred Gardner" />
-          <div class="rep-info">
-            <p class="rep-title">State Representative</p>
-            <p><strong>Fred Gardner</strong></p>
-            <p class="rep-party">Republican</p>
-            <p>
-              <a href="mailto:Fred.Gardner@house.ks.gov">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </p>
-            <p>
-              <a href="tel:7852967451">
-                <i class="fas fa-phone"></i> (785) 296-7451
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="rep-list" id="rep-list"></div>
     </section>
   </main>
 
@@ -283,7 +187,44 @@
 
   <!-- Javascript -->
   <script>
+    // Update footer copyright year
     document.getElementById("year").textContent = new Date().getFullYear();
-  </script>  
+
+    // Function to load representative information from a csv
+    async function loadRepsFromCSV() {
+      const response = await fetch('reps.csv');
+      const data = await response.text();
+
+      const rows = data.trim().split('\n').slice(1); // Skip header row
+      const reps = rows.map(row => {
+        const [name, title, party, img, email, phone] = row.split(',');
+        return { name, title, party, img, email, phone };
+      });
+
+      const container = document.getElementById('rep-list');
+      container.innerHTML = reps.map(rep => `
+        <div class="rep-card">
+          <img src="${rep.img}" alt="${rep.name}" />
+          <div class="rep-info">
+            <p class="rep-title">${rep.title}</p>
+            <p><strong>${rep.name}</strong></p>
+            <p class="rep-party">${rep.party}</p>
+            <p>
+              <a href="${rep.email}">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </p>
+            <p>
+              <a href="tel:${rep.phone}">
+                <i class="fas fa-phone"></i> (${rep.phone.slice(0,3)}) ${rep.phone.slice(3,6)}-${rep.phone.slice(6)}
+              </a>
+            </p>
+          </div>
+        </div>
+      `).join('');
+    }
+    // Load list of representatives
+    loadRepsFromCSV();
+  </script>
 </body>
 </html>

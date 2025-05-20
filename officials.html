@@ -260,9 +260,7 @@
         });
 
         // Load CSV and then initialize
-        populateLeadersTableFromCSV("reps.csv").then(() => {
-          sortColumnIndex = 0;
-          sortAscending = true;
+        populateLeadersTableFromCSV("officials.csv").then(() => {
           renderTablePage();
         });
       });
