@@ -623,21 +623,29 @@ nav a:not(:last-child)::before {
   line-height: 1.5;
 }
 
-
 /* Main footer */
 footer {
-  border-top: 1px solid #ccc;
-  margin-top: 0; /* removed spacing since new section is above */
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 14px;
-  background-color: #f8f8f8;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px; /* Add vertical spacing between sections */
 }
 
 .footer-elephant {
   width: 40px;
+}
+
+/* Optional: style the inner "main" footer content as a row */
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  margin-top: 0;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
 }
 
 .page-title {
@@ -997,6 +1005,12 @@ html {
     flex-direction: column;
     text-align: center;
     gap: 10px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .footer-elephant {

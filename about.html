@@ -156,46 +156,48 @@
     </script>
   </main>
 
-  <div class="mailing-list-footer-section">
-    <h2>KEEP UP WITH US!</h2>
-    <form action="https://formsubmit.co/288d5428e8e8440a48cc222b873ad33a" method="POST">
-      <input type="hidden" name="_next" value="https://ancogop.org/thank-you">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="box">
-      <input type="hidden" name="_subject" value="Mailing List Signup - ancogop.org">
-  
-      <label for="mailing-name" class="visually-hidden">Name</label>
-      <input type="text" id="mailing-name" name="Name" required placeholder="Your Full Name">
-  
-      <label for="mailing-email" class="visually-hidden">Email</label>
-      <input type="email" id="mailing-email" name="Email" required placeholder="Your Email Address">
-  
-      <button type="submit">JOIN MAILING LIST</button>
-    </form>
-  </div>  
-
-  <!-- Footer links section -->
-  <div class="footer-links">
-    <a href="https://kansas.gop/" target="_blank">KANSAS GOP</a>
-    <a href="https://www.gop.com/" target="_blank">REPUBLICAN NATIONAL COMMITTEE</a>
-    <a href="donate" target="_blank">DONATE</a>
-  </div>
-
-  <!-- Main footer -->
+  <!-- Footer -->
   <footer>
-    <img src="images/elephant.png" alt="Republican Elephant" class="footer-elephant" />
-    <p>© 2025 Anderson County Republican Central Committee. All rights reserved.</p>
-    <div class="donate">
-      <a href="contact">CONTACT US</a>
+    <!-- Mailing List Subscription Form -->
+    <div class="mailing-list-footer-section">
+      <h2>KEEP UP WITH US!</h2>
+      <form action="https://formsubmit.co/288d5428e8e8440a48cc222b873ad33a" method="POST">
+        <input type="hidden" name="_next" value="https://ancogop.org/thank-you-mail">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_subject" value="Mailing List Signup - ancogop.org">
+      
+        <label for="mailing-name" class="visually-hidden">Name</label>
+        <input type="text" id="mailing-name" name="Name" required placeholder="Your Full Name">
+      
+        <label for="mailing-email" class="visually-hidden">Email</label>
+        <input type="email" id="mailing-email" name="Email" required placeholder="Your Email Address">
+      
+        <button type="submit">JOIN MAILING LIST</button>
+      </form>
+    </div>
+    <!-- Footer links section -->
+    <div class="footer-links">
+      <a href="https://kansas.gop/" target="_blank">KANSAS GOP</a>
+      <a href="https://www.gop.com/" target="_blank">REPUBLICAN NATIONAL COMMITTEE</a>
+      <a href="donate" target="_blank">DONATE</a>
+    </div>
+    <!-- Main Footer -->
+    <div class="footer-main">
+      <img src="images/elephant.png" alt="Republican Elephant" class="footer-elephant" />
+      <p>© <span id="year"></span> Anderson County Republican Central Committee. All rights reserved.</p>
+      <div class="donate">
+        <a href="contact">CONTACT US</a>
+      </div>
+    </div>
+    <!-- Disclaimer -->
+    <div class="footer-disclaimer">
+      <p>
+        Paid for by the Anderson County Republican Central Committee. Jeremy DuPont, Treasurer.<br />
+        412 E 2nd Ave, Garnett, KS 66032<br />
+        Not authorized by any candidate or candidates committee.
+      </p>
     </div>
   </footer>
-
-  <div class="footer-disclaimer">
-    <p>
-      Paid for by the Anderson County Republican Central Committee. Jeremy DuPont, Treasurer.<br />
-      412 E 2nd Ave, Garnett, KS 66032<br />
-      Not authorized by any candidate or candidates committee.
-    </p>
-  </div>
 </body>
 </html>
