@@ -1,6 +1,6 @@
 name,title,party,img,email,phone
-Jerry Moran,U.S. Senator,Republican,images/moran.jpg,https://www.moran.senate.gov/public/index.cfm/e-mail-jerry,9133930711
-Roger Marshall,U.S. Senator,Republican,images/marshall.jpg,https://www.marshall.senate.gov/contact/contact-form/,9138797070
-Sharice Davids,U.S. Representative,Democrat,images/davids.webp,https://davids.house.gov/address_authentication?form=/contact/email-me,9136210832
-Caryn Tyson,State Senator,Republican,images/tyson.jpg,mailto:Caryn.Tyson@senate.ks.gov,7852966838
-Fred Gardner,State Representative,Republican,images/gardner.jpg,mailto:Fred.Gardner@house.ks.gov,7852967451
+Jerry Moran,U.S. Senator,Republican,images/reps/moran.jpg,https://www.moran.senate.gov/public/index.cfm/e-mail-jerry,9133930711
+Roger Marshall,U.S. Senator,Republican,images/reps/marshall.jpg,https://www.marshall.senate.gov/contact/contact-form/,9138797070
+Sharice Davids,U.S. Representative,Democrat,images/reps/davids.webp,https://davids.house.gov/address_authentication?form=/contact/email-me,9136210832
+Caryn Tyson,State Senator,Republican,images/reps/tyson.jpg,mailto:Caryn.Tyson@senate.ks.gov,7852966838
+Fred Gardner,State Representative,Republican,images/reps/gardner.jpg,mailto:Fred.Gardner@house.ks.gov,7852967451
