@@ -1,6 +1,6 @@
 // Function to load representative information from a csv
 async function loadRepsFromCSV() {
-  const response = await fetch('files/reps.csv');
+  const response = await fetch('assets/reps.csv');
   const data = await response.text();
   const rows = data.trim().split('\n').slice(1); // Skip header row
   const reps = rows.map(row => {
