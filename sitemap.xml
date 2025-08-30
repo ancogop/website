@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ancogop.org/</loc>
-  </url>
-  <url>
-    <loc>https://ancogop.org/about/</loc>
-  </url>
-  <url>
-    <loc>https://ancogop.org/documents/</loc>
-  </url>
-  <url>
-    <loc>https://ancogop.org/donate/</loc>
-  </url>
-  <url>
-    <loc>https://ancogop.org/officials/</loc>
-  </url>
-  <url>
-    <loc>https://ancogop.org/contact/</loc>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ancogop.org/</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ancogop.org/donate</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ancogop.org/about</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ancogop.org/documents</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ancogop.org/officials</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ancogop.org/contact</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ancogop.org/files/minutes/11-14-2024.pdf</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ancogop.org/files/filings/statement-of-organization-11162024.pdf</loc>
+  <lastmod>2025-05-25T18:39:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
